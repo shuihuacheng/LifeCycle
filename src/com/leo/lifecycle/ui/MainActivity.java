@@ -25,7 +25,6 @@ public class MainActivity extends Activity implements OnClickListener{
 		setContentView(R.layout.activity_main);
 		
 		LogUtil.i(TAG, "onCreate-->");
-		
 		btn_toFirstActivity = (Button)findViewById(R.id.btn_toFirstActivity);
 		btn_toFragmentActivityByLayout = (Button)findViewById(R.id.btn_toFragmentActivityByLayout);
 		btn_toFragmentActivityByAction = (Button)findViewById(R.id.btn_toFragmentActivityByAction);
