@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.leo.lifecycle.ui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.leo.lifecycle.ui.MainActivity"
+            android:label="@string/app_name" >
+            <!--   android:clearTaskOnLaunch="true"> -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".activity.FirstActivity" />
+       <!--     android:launchMode="singleTask"/> -->
+       <!--       android:finishOnTaskLaunch="true"/> -->
+        
+       	 <activity android:name=".activity.SecondActivity"/>
+                
+       	<activity android:name=".activity.ThirdActivity"/>
+        
+         <activity android:name=".activity.FirstFragmentActivity"/>
+         
+         <activity android:name=".activity.FragmentActivityByLayout"/>
+         
+         <activity android:name=".activity.FragmentActivityByAction"/>
+         
+    </application>
+
+</manifest>
