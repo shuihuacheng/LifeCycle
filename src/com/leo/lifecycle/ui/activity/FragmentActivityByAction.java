@@ -1,7 +1,6 @@
 package com.leo.lifecycle.ui.activity;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -11,10 +10,8 @@ import android.widget.Button;
 import com.leo.lifecycle.ui.R;
 import com.leo.lifecycle.ui.fragment.FirstFragment;
 import com.leo.lifecycle.ui.fragment.SecondFragment;
-import com.leo.lifecycle.utils.LogUtil;
 
-public class FragmentActivityByAction extends FragmentActivity implements OnClickListener{
-	private static final String TAG = "FragmentActivityByAction";
+public class FragmentActivityByAction extends BaseFragmentActivity implements OnClickListener{
 	private Button btn_add;
 	private Button btn_remove;
 	private Button btn_replace;
@@ -26,7 +23,6 @@ public class FragmentActivityByAction extends FragmentActivity implements OnClic
 	protected void onCreate(Bundle saveInstanceState) {
 		super.onCreate(saveInstanceState);
 		setContentView(R.layout.fragment_activity_action);
-		LogUtil.i(TAG, "onCreate-->");
 		if(findViewById(R.id.fragment_container) != null){
 			
 			if(saveInstanceState != null){
@@ -51,42 +47,6 @@ public class FragmentActivityByAction extends FragmentActivity implements OnClic
 		btn_replace.setOnClickListener(this);
 	}
 	
-	@Override
-	protected void onStart() {
-		LogUtil.i(TAG, "onStart-->");
-		super.onStart();
-	}
-	
-	@Override
-	protected void onResume() {
-		LogUtil.i(TAG, "onResume-->");
-		super.onResume();
-	}
-	
-	@Override
-	protected void onPause() {
-		LogUtil.i(TAG, "onPause-->");
-		super.onPause();
-	}
-	
-	@Override
-	protected void onStop() {
-		LogUtil.i(TAG, "onStop-->");
-		super.onStop();
-	}
-	
-	@Override
-	protected void onDestroy() {
-		LogUtil.i(TAG, "onDestroy-->");
-		super.onDestroy();
-	}
-	
-	@Override
-	protected void onRestart() {
-		LogUtil.i(TAG, "onRestart-->");
-		super.onRestart();
-	}
-
 	@Override
 	public void onClick(View v) {
 		FragmentManager fm = getSupportFragmentManager();
@@ -130,5 +90,10 @@ public class FragmentActivityByAction extends FragmentActivity implements OnClic
 			break;
 		}
 		
+	}
+
+	@Override
+	protected void setTAG() {
+		this.TAG = "FragmentActivityByAction";
 	}
 }
